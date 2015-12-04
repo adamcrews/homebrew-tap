@@ -19,18 +19,18 @@ end
 
 __END__
 diff --git a/Makefile b/Makefile
-index 9e9ac73..8244b55 100644
+index 8d1300c..77f2819 100644
 --- a/Makefile
 +++ b/Makefile
-@@ -56,8 +56,6 @@ PROGNAME = proxytunnel
- # Remove strlcpy/strlcat on (open)bsd/darwin systems
- OBJ = proxytunnel.o  \
-  base64.o  \
-- strlcpy.o \
-- strlcat.o \
-  strzcat.o \
-  setproctitle.o  \
-  io.o    \
+@@ -64,8 +64,6 @@ mandir = $(datadir)/man
+ OBJ = proxytunnel.o    \
+        base64.o        \
+        strlcpy.o       \
+-       strlcat.o       \
+-       strzcat.o       \
+        setproctitle.o  \
+        io.o            \
+        http.o          \
 diff --git a/proxytunnel.h b/proxytunnel.h
 index b948be0..e63c72a 100644
 --- a/proxytunnel.h
@@ -43,4 +43,4 @@ index b948be0..e63c72a 100644
 -size_t strlcpy(char *dst, const char *src, size_t siz);
  size_t strzcat(char *dst, char *format, ...);
  int main( int argc, char *argv[] );
- char * readpassphrase(const char *, char *, size_t, int);  
+ char * readpassphrase(const char *, char *, size_t, int);
