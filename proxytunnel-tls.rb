@@ -18,29 +18,29 @@ class ProxytunnelTls < Formula
 end
 
 __END__
-[1mdiff --git a/Makefile b/Makefile[m
-[1mindex 8d1300c..2e48b6d 100644[m
-[1m--- a/Makefile[m
-[1m+++ b/Makefile[m
-[36m@@ -63,8 +63,6 @@[m [mmandir = $(datadir)/man[m
- # Remove strlcpy/strlcat on (open)bsd/darwin systems[m
- OBJ = proxytunnel.o	\[m
- 	base64.o	\[m
-[31m-	strlcpy.o	\[m
-[31m-	strlcat.o	\[m
- 	strzcat.o	\[m
- 	setproctitle.o	\[m
- 	io.o		\[m
-[1mdiff --git a/proxytunnel.h b/proxytunnel.h[m
-[1mindex b948be0..e63c72a 100644[m
-[1m--- a/proxytunnel.h[m
-[1m+++ b/proxytunnel.h[m
-[36m@@ -32,8 +32,6 @@[m [mvoid closeall();[m
- void do_daemon();[m
- void initsetproctitle(int argc, char *argv[]);[m
- void setproctitle(const char *fmt, ...);[m
-[31m-size_t strlcat(char *dst, const char *src, size_t siz);[m
-[31m-size_t strlcpy(char *dst, const char *src, size_t siz);[m
- size_t strzcat(char *dst, char *format, ...);[m
- int main( int argc, char *argv[] );[m
- char * readpassphrase(const char *, char *, size_t, int);[m
+diff --git a/Makefile b/Makefile
+index 8d1300c..2e48b6d 100644
+--- a/Makefile
++++ b/Makefile
+@@ -63,8 +63,6 @@ mandir = $(datadir)/man
+ # Remove strlcpy/strlcat on (open)bsd/darwin systems
+ OBJ = proxytunnel.o	\
+ 	base64.o	\
+-	strlcpy.o	\
+-	strlcat.o	\
+ 	strzcat.o	\
+ 	setproctitle.o	\
+ 	io.o		\
+diff --git a/proxytunnel.h b/proxytunnel.h
+index b948be0..e63c72a 100644
+--- a/proxytunnel.h
++++ b/proxytunnel.h
+@@ -32,8 +32,6 @@ void closeall();
+ void do_daemon();
+ void initsetproctitle(int argc, char *argv[]);
+ void setproctitle(const char *fmt, ...);
+-size_t strlcat(char *dst, const char *src, size_t siz);
+-size_t strlcpy(char *dst, const char *src, size_t siz);
+ size_t strzcat(char *dst, char *format, ...);
+ int main( int argc, char *argv[] );
+ char * readpassphrase(const char *, char *, size_t, int);
