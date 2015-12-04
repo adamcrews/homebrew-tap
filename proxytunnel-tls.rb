@@ -7,6 +7,7 @@ class ProxytunnelTls < Formula
 
   depends_on "openssl"
   depends_on "asciidoc"
+  depends_on "xmlto"
 
   def install
     system "make"
