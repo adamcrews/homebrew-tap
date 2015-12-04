@@ -6,6 +6,7 @@ class ProxytunnelTls < Formula
   sha256 "a8ed7f463d5adb17fa1dcd26b2142a3d2b356c4c0b61f0417597976c7feb35a5"
 
   depends_on "openssl"
+  depends_on "asciidoc"
 
   def install
     system "make"
