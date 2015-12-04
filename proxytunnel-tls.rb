@@ -44,3 +44,4 @@ index b948be0..e63c72a 100644
  size_t strzcat(char *dst, char *format, ...);
  int main( int argc, char *argv[] );
  char * readpassphrase(const char *, char *, size_t, int);
+
